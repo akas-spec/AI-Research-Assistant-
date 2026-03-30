@@ -1,0 +1,36 @@
+# Core dependencies
+streamlit==1.31.0
+python-dotenv==1.0.0
+
+# LLM APIs
+groq==0.9.0
+google-generativeai==0.3.2
+
+# LangChain ecosystem
+langchain==0.1.9
+langchain-community==0.0.24
+
+# Vector database
+chromadb==0.4.22
+
+# Embeddings
+sentence-transformers==2.3.1
+transformers==4.38.2
+torch==2.2.0
+
+# Document processing
+pypdf==4.0.1
+pymupdf==1.23.21
+
+# Paper search
+arxiv==2.1.0
+
+# Utilities
+numpy==1.26.3
+pandas==2.2.0
+tiktoken==0.5.2
+typing-extensions>=4.8.0
+
+# Optional (better UX/debugging)
+tqdm==4.66.1
+rich==13.7.0
