@@ -69,10 +69,27 @@ class GroqLLM:
             model=model,
             messages=messages,
             temperature=temperature,
-            max_tokens=max_tokens
+            max_tokens=max_tokens,
         )
         
         return response.choices[0].message.content
+    def stream(self, prompt, temperature=0.3, max_tokens=800,model: str = config.GROQ_QUALITY_MODEL):
+     """
+     Streaming response generator for Groq.
+     Yields chunks of text as they are generated.
+     """
+
+     response = self.client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=temperature,
+        max_tokens=max_tokens,
+        stream=True
+    )
+
+     for chunk in response:
+        if chunk.choices[0].delta.content:
+            yield chunk.choices[0].delta.content
     
     def classify(self, prompt: str) -> str:
         """

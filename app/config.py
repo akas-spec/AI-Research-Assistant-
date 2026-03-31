@@ -18,12 +18,12 @@ if not GEMINI_API_KEY:
 
 
 # Groq Models
-GROQ_FAST_MODEL = "llama-3.1-8b-instant"        # classification / simple
-GROQ_QUALITY_MODEL = "llama-3.3-70b-versatile"  # main responses
+GROQ_FAST_MODEL = "llama-3.1-8b-instant"        
+GROQ_QUALITY_MODEL = "llama-3.3-70b-versatile" 
 
 # Gemini Models for better quality
-GEMINI_PRO_MODEL = "models/gemini-3-flash-preview"
-GEMINI_ADVANCED_MODEL = "models/gemini-2.5-pro"
+GEMINI_PRO_MODEL = "models/gemini-2.5-flash"
+GEMINI_ADVANCED_MODEL = "models/gemini-2.5-flash"
 
 
 GROQ_RATE_LIMIT = 30

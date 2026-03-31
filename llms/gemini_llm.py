@@ -82,6 +82,21 @@ class GeminiLLM:
                 time.sleep(wait)
 
         return f"❌ Gemini ({self.mode}) failed after retries."
+    def stream(self, prompt: str):
+     self._rate_limit_check()
+
+     try:
+        response = self.model.generate_content(
+            prompt,
+            stream=True
+        )
+
+        for chunk in response:
+            if hasattr(chunk, "text") and chunk.text:
+                yield chunk.text
+
+     except Exception as e:
+        yield f"\n⚠️ Streaming error: {str(e)}"
 
     def invoke_with_context(self, query: str, context: str) -> str:
         prompt = f"""

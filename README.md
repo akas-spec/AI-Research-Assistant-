@@ -1,41 +1,79 @@
 # 🔬 AI Research Assistant
 
-An intelligent AI system that answers research queries using dynamic routing, retrieval-augmented generation (RAG), and multi-model reasoning.
+
+An advanced **RAG-based AI system** that supports document analysis, academic research, and real-time streaming responses with user-controlled interruption.
+
 
 ---
 
 ## 🚀 Features
 
-* **Smart Query Routing**: Automatically classifies queries and selects the best pipeline
-* **Multiple Pipelines**:
+### 🧠 Multi-Mode Query System
 
-  * Simple → Direct LLM response
-  * Retrieval → RAG using vector database
-  * Analytical → Deep reasoning with Gemini
-  * Research → arXiv search + synthesis
-* **RAG System**: Uses embeddings + ChromaDB for context-aware answers
-* **Multi-LLM Support**: Groq (fast responses) + Gemini (advanced reasoning)
-* **PDF Processing**: Upload and query your own research papers
-* **Interactive UI**: Built using Streamlit
+* **📊 Analysis Mode** → Compare uploaded PDFs using Retrieval + Gemini
+* **🔬 Research Mode** → Full pipeline:
+
+  ```
+  Query → arXiv Search → Retriever → Context → LLM
+  ```
+* **⚡ Simple Mode** → Fast responses via Groq (Llama 3.1)
 
 ---
 
-## 🧠 System Architecture
+### ⚡ Real-Time Streaming + Stop Control (NEW 🔥)
 
-```id="7x9q2k"
+* Token-by-token response streaming
+* ⛔ Stop response mid-generation
+* Partial output retained
+* ChatGPT-like interactive experience
+
+---
+
+### 📄 Document Processing
+
+* Upload research papers (PDF)
+* Automatic chunking & embeddings
+* Stored in vector DB (ChromaDB)
+
+---
+
+### 🔍 Retrieval-Augmented Generation (RAG)
+
+* Context-aware answers from:
+
+  * Uploaded documents
+  * arXiv research papers
+* Source attribution with relevance scores
+
+---
+
+### 🤖 Multi-Model Orchestration
+
+* **Groq (Llama 3.1)** → fast responses & streaming
+* **Gemini Pro** → document analysis
+* **Gemini Advanced** → deep research synthesis
+
+---
+
+## 🏗️ Architecture
+
+```
 User Query
    ↓
-Query Router (classification)
+Mode Selection (UI buttons)
    ↓
-Pipeline Selection
+Router
    ↓
-[LLM / RAG / arXiv Search]
+[Analysis] → Retriever → Gemini  
+[Research] → arXiv → Retriever → Context → LLM  
+[Simple] → Groq  
    ↓
-Final Response + Sources
+Streaming Output (with Stop Control)
 ```
 
 ---
 
+<<<<<<< HEAD
 ## ⚙️ Tech Stack
 
 * Python
@@ -112,3 +150,48 @@ Open in browser: http://localhost:8501
 ## 📄 License
 
 MIT License
+=======
+## 🧪 Tech Stack
+
+* Python, Streamlit
+* ChromaDB (Vector DB)
+* Groq API (Llama 3.1)
+* Google Gemini API
+* arXiv API
+
+---
+
+## ✨ Recent Improvements
+
+* ❌ Removed unreliable smart routing
+* ✅ Added explicit user-controlled modes
+* ✅ Implemented streaming responses
+* ✅ Added stop-response functionality
+* ✅ Improved system reliability & UX
+
+---
+
+## 📌 Future Work
+
+* Streaming with full RAG pipeline
+* Chat history memory
+* PDF-specific Q&A mode
+* Deployment (Docker / Cloud)
+
+---
+
+## ⚙️ Setup
+
+```bash
+git clone <repo>
+cd AI-RESEARCH-ASSISTANT
+pip install -r requirements.txt
+streamlit run app/main.py
+```
+
+---
+
+## 🧠 Author
+
+Akash
+>>>>>>> 63c75e3 (feat: add streaming responses with stop control and remove smart routing)
