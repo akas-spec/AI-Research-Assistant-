@@ -17,16 +17,32 @@ def search_arxiv(query: str, max_results: int = 5) -> str:
     Returns:
         Formatted string with paper information
     """
-    time.sleep(3)
     try:
+        query = query[:100]  # shorten long queries
+        max_results = min(3, max_results)
         search = arxiv.Search(
             query=query,
             max_results=max_results,
             sort_by=arxiv.SortCriterion.Relevance
         )
         client = arxiv.Client(page_size=max_results)
+        def safe_results(client, search):
+          for attempt in range(3):
+             try:
+                return list(client.results(search))
+             except Exception as e:
+              if "429" in str(e):
+                wait = 2 * (attempt + 1)
+                print(f"⚠️ Rate limited. Retrying in {wait}s...")
+                time.sleep(wait)
+              else:
+                raise e
+        return []
+
+        results = safe_results(client, search)
         papers = []
-        for result in client.results(search):
+        for result in results:
+            time.sleep(1)
             papers.append(f"""
                 Title: {result.title}
                 Authors: {', '.join([a.name for a in result.authors][:3])}{'...' if len(result.authors) > 3 else ''}
