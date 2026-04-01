@@ -70,14 +70,6 @@ Final Answer + Sources
 
 
 ---
-
-## 🧪 Tech Stack
-
-- Python
-- Streamlit
-- 
----
-
 ## 🧪 Tech Stack
 
 - Python
