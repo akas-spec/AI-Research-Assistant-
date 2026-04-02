@@ -1,5 +1,5 @@
 """
-app/router.py - Manual query router (no smart/auto classification)
+app/router.py - Manual query router with explicit user-selected modes
 
 Three explicit modes selected by the user in the UI:
   1. analysis  → Retrieval + Gemini  (compare uploaded local documents)

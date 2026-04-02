@@ -133,5 +133,83 @@ streamlit run app/main.py
 3. Latest research on RAG systems
 4. Explain multimodal learning advancements
 
+
 🧠 Author
    AKASH
+
+## 📖 Usage
+
+### Upload Papers
+
+* Go to **Upload Papers** tab
+* Upload a PDF
+* Process and store in vector database
+
+### Ask Questions
+
+* Enter your query
+* System automatically:
+
+  * Classifies query
+  * Selects pipeline
+  * Returns answer with sources
+
+---
+
+## 📌 Example Queries
+
+* What is a transformer?
+* Compare BERT and GPT architectures
+* Find papers on retrieval-augmented generation
+* State of research on multimodal learning
+
+---
+
+## 📄 License
+
+MIT License
+=======
+
+## 🧪 Tech Stack
+
+* Python, Streamlit
+* ChromaDB (Vector DB)
+* Groq API (Llama 3.1)
+* Google Gemini API
+* arXiv API
+
+---
+
+## ✨ Recent Improvements
+
+* ❌ Removed unreliable smart routing
+* ✅ Added explicit user-controlled modes
+* ✅ Implemented streaming responses
+* ✅ Added stop-response functionality
+* ✅ Improved system reliability & UX
+
+---
+
+## 📌 Future Work
+
+* Streaming with full RAG pipeline
+* Chat history memory
+* PDF-specific Q&A mode
+* Deployment (Docker / Cloud)
+
+---
+
+## ⚙️ Setup
+
+```bash
+git clone <repo>
+cd AI-RESEARCH-ASSISTANT
+pip install -r requirements.txt
+streamlit run app/main.py
+```
+
+---
+
+## 🧠 Author
+
+Akash

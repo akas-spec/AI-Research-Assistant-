@@ -12,7 +12,7 @@ venv/
 
 # Data
 data/raw/
-data/processed/
+data/chroma_db/
 
 # Streamlit cache
 .streamlit/
