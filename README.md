@@ -94,8 +94,14 @@ Final Answer + Sources
 ---
 
 ## 📸 Demo
+  
+## 📸 Demo
 
-_Add screenshots here (answer + sources UI)_
+### 📝 Answer Output
+![Answer Output](working_demo/main.png)
+
+### 📚 Sources with Citations
+![Sources](working_demo/sources.png)
 
 ---
 
